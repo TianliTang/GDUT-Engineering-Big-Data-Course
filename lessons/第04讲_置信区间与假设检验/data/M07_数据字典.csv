@@ -1,0 +1,7 @@
+﻿field,meaning,type,unit_or_format,role
+installation_id,安装事件编号,string,,样本标识
+installation_date,安装日期,date,YYYY-MM-DD,背景字段
+crew_id,班组编号,string,,背景字段
+zone_id,施工区编号,string,,背景字段
+installation_time_min,单次墙板安装用时,float,分钟,主分析变量
+selection_order,样本抽取顺序,integer,,追溯字段
