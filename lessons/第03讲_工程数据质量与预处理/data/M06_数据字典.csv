@@ -1,0 +1,29 @@
+table_name,field_name,data_type,unit,description_zh,allowed_values_or_format,role
+installation_quality_dirty.csv,inspection_id,string,,质检记录标识；脏数据中可能缺失或重复,见数据卡、规则表或映射表,identifier
+installation_quality_dirty.csv,component_id,string,,虚拟构件标识,见数据卡、规则表或映射表,business_key
+installation_quality_dirty.csv,task_id,string,,安装任务标识,见数据卡、规则表或映射表,relation_key
+installation_quality_dirty.csv,floor_zone,string,,楼层—作业区编码,见数据卡、规则表或映射表,category
+installation_quality_dirty.csv,component_type,string,,构件类型,见数据卡、规则表或映射表,category
+installation_quality_dirty.csv,inspection_round,string,,检查轮次：1为初检、2为复检,见数据卡、规则表或映射表,business_key
+installation_quality_dirty.csv,install_time,string,local time,安装完成时间原始字符串,见数据卡、规则表或映射表,datetime_raw
+installation_quality_dirty.csv,inspection_time,string,local time,检查时间原始字符串,见数据卡、规则表或映射表,datetime_raw
+installation_quality_dirty.csv,record_created_time,string,local time,记录写入时间原始字符串,见数据卡、规则表或映射表,datetime_raw
+installation_quality_dirty.csv,vertical_deviation_value,string,见deviation_unit,垂直偏差幅值的原始数值,见数据卡、规则表或映射表,numeric_raw
+installation_quality_dirty.csv,deviation_unit,string,mm/cm,垂直偏差单位原始写法,见数据卡、规则表或映射表,unit_raw
+installation_quality_dirty.csv,grout_strength_mpa,string,MPa,灌浆强度教学测量值,见数据卡、规则表或映射表,numeric_raw
+installation_quality_dirty.csv,inspector_team,string,,检查班组原始写法,见数据卡、规则表或映射表,category_raw
+installation_quality_dirty.csv,result_recorded,string,,记录的通过/不通过结论,见数据卡、规则表或映射表,category_raw
+installation_quality_dirty.csv,rework_flag,string,,返工标记原始写法,见数据卡、规则表或映射表,boolean_raw
+installation_quality_dirty.csv,revision_flag,string,,修订记录标记原始写法,见数据卡、规则表或映射表,boolean_raw
+installation_quality_dirty.csv,source_system,string,,虚拟来源系统,见数据卡、规则表或映射表,lineage
+quality_rules.csv,rule_id,string,,规则标识,见对应文件,metadata
+quality_rules.csv,quality_dimension,string,,质量维度,见对应文件,metadata
+quality_rules.csv,field_scope,string,,适用字段,见对应文件,metadata
+quality_rules.csv,rule_description_zh,string,,规则说明,见对应文件,metadata
+quality_rules.csv,severity,string,,严重程度,见对应文件,metadata
+quality_rules.csv,suggested_action,string,,参考处理动作,见对应文件,metadata
+quality_rules.csv,is_teaching_assumption,boolean,,是否为教学假设,见对应文件,metadata
+category_mapping.csv,field_name,string,,待映射字段,见对应文件,metadata
+category_mapping.csv,raw_value,string,,原始写法,见对应文件,metadata
+category_mapping.csv,canonical_value,string,,规范值,见对应文件,metadata
+category_mapping.csv,mapping_note_zh,string,,映射说明,见对应文件,metadata

@@ -1,0 +1,12 @@
+﻿rule_id,quality_dimension,field_scope,rule_description_zh,severity,suggested_action,is_teaching_assumption,rule_version
+R01,completeness,inspection_id;component_id;inspection_round,记录标识、构件标识和检查轮次必填,error,隔离并回查,True,v1.1.0
+R02,uniqueness,inspection_id,检查记录标识不得重复,error,识别完全复制或重新分配标识,True,v1.1.0
+R03,uniqueness,component_id;inspection_round,同一构件同一检查轮次应对应单一当前记录,error,按版本和记录时间解析业务重复,True,v1.1.0
+R04,consistency,install_time;inspection_time,检查时间不得早于安装完成时间,error,保留原值并回查时间,True,v1.1.0
+R05,timeliness,inspection_time;record_created_time,记录时间不得早于检查时间，且报告延迟不超过72 h,review,负延迟回查；超时记录保留并标记,True,v1.1.0
+R06,consistency,vertical_deviation_value;deviation_unit,偏差单位必须可映射为mm或cm,error,无法识别单位时保留原值并复核,True,v1.1.0
+R07,validity,vertical_deviation_value;deviation_unit,垂直偏差幅值规范化后应位于0—50 mm,error,确定无效值转为空值并记录,True,v1.1.0
+R08,validity,grout_strength_mpa,灌浆强度教学测量值应位于0—100 MPa,error,确定无效值转为空值并记录,True,v1.1.0
+R09,consistency,inspector_team;result_recorded;rework_flag,班组、结果和返工标记必须可映射到规范类别,error,使用显式映射；未知写法进入复核,True,v1.1.0
+R10,consistency,component_id;inspection_round;rework_flag,复检记录应具有前序初检并记录返工,review,检查事件链和返工记录,True,v1.1.0
+R11,consistency,vertical_deviation_value;grout_strength_mpa;result_recorded,记录结论与本案例教学测量规则应一致,review,保留原值并人工复核,True,v1.1.0

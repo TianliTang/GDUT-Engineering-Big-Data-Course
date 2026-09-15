@@ -1,0 +1,43 @@
+field_name,raw_value,canonical_value,mapping_note_zh
+deviation_unit,CM,cm,显式教学映射；未列值不自动猜测
+deviation_unit,cm,cm,显式教学映射；未列值不自动猜测
+deviation_unit,厘米,cm,显式教学映射；未列值不自动猜测
+deviation_unit,MM,mm,显式教学映射；未列值不自动猜测
+deviation_unit,mm,mm,显式教学映射；未列值不自动猜测
+deviation_unit,毫米,mm,显式教学映射；未列值不自动猜测
+inspector_team,A班,TEAM_A,显式教学映射；未列值不自动猜测
+inspector_team,TEAM_A,TEAM_A,显式教学映射；未列值不自动猜测
+inspector_team,Team A,TEAM_A,显式教学映射；未列值不自动猜测
+inspector_team,team_a,TEAM_A,显式教学映射；未列值不自动猜测
+inspector_team,B班,TEAM_B,显式教学映射；未列值不自动猜测
+inspector_team,TEAM_B,TEAM_B,显式教学映射；未列值不自动猜测
+inspector_team,Team B,TEAM_B,显式教学映射；未列值不自动猜测
+inspector_team,team_b,TEAM_B,显式教学映射；未列值不自动猜测
+inspector_team,C班,TEAM_C,显式教学映射；未列值不自动猜测
+inspector_team,TEAM_C,TEAM_C,显式教学映射；未列值不自动猜测
+inspector_team,Team C,TEAM_C,显式教学映射；未列值不自动猜测
+inspector_team,team_c,TEAM_C,显式教学映射；未列值不自动猜测
+result_recorded,FAIL,fail,显式教学映射；未列值不自动猜测
+result_recorded,fail,fail,显式教学映射；未列值不自动猜测
+result_recorded,不合格,fail,显式教学映射；未列值不自动猜测
+result_recorded,不通过,fail,显式教学映射；未列值不自动猜测
+result_recorded,PASS,pass,显式教学映射；未列值不自动猜测
+result_recorded,pass,pass,显式教学映射；未列值不自动猜测
+result_recorded,合格,pass,显式教学映射；未列值不自动猜测
+result_recorded,通过,pass,显式教学映射；未列值不自动猜测
+revision_flag,0,false,显式教学映射；未列值不自动猜测
+revision_flag,N,false,显式教学映射；未列值不自动猜测
+revision_flag,false,false,显式教学映射；未列值不自动猜测
+revision_flag,否,false,显式教学映射；未列值不自动猜测
+revision_flag,1,true,显式教学映射；未列值不自动猜测
+revision_flag,Y,true,显式教学映射；未列值不自动猜测
+revision_flag,true,true,显式教学映射；未列值不自动猜测
+revision_flag,是,true,显式教学映射；未列值不自动猜测
+rework_flag,0,false,显式教学映射；未列值不自动猜测
+rework_flag,N,false,显式教学映射；未列值不自动猜测
+rework_flag,false,false,显式教学映射；未列值不自动猜测
+rework_flag,否,false,显式教学映射；未列值不自动猜测
+rework_flag,1,true,显式教学映射；未列值不自动猜测
+rework_flag,Y,true,显式教学映射；未列值不自动猜测
+rework_flag,true,true,显式教学映射；未列值不自动猜测
+rework_flag,是,true,显式教学映射；未列值不自动猜测
