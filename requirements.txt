@@ -1,36 +1,24 @@
-# 《工程大数据分析》Windows 机房统一直接依赖
+# 《工程大数据分析与应用》第02—04讲直接依赖
 # 适用环境：Windows 64 位 + Python 3.12.10 + venv
-# 覆盖范围：第2—10讲学生 Notebook 与课程综合项目 Notebook
+# 覆盖范围：第02—04讲学生 Notebook
 #
 # 推荐安装命令（在已创建的 venv 中执行）：
-# python -m pip install --only-binary=:all: -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements-course.txt
+# python -m pip install --only-binary=:all: -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 #
 # Python 解释器不是 pip 包，不应写成 python==3.12.10。
 # 本文件锁定课程直接依赖；pip 会解析并安装其传递依赖。
 
-# JupyterLab 、Notebook 内核与执行验证
+# JupyterLab 与 Notebook 内核
 jupyterlab==4.5.4
 ipykernel==7.3.0
-ipython==9.16.1
-jupyter-client==8.9.1
-jupyter-core==5.9.1
-nbformat==5.11.0
-nbclient==0.11.0
 
-# 数值计算、表格处理与统计建模
+# 数值计算、表格处理与统计推断
 numpy==2.3.5
 pandas==2.2.3
 scipy==1.18.0
-statsmodels==0.14.5
 
-# 机器学习与模型序列化
+# 第02讲环境自检使用
 scikit-learn==1.9.0
-joblib==1.5.3
 
-# 可视化与图像输出
+# 可视化
 matplotlib==3.11.1
-seaborn==0.13.2
-pillow==12.3.0
-
-# 综合项目配置文件
-PyYAML==6.0.3
