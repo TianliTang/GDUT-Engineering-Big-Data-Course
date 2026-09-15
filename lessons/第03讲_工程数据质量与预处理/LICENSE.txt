@@ -1,0 +1,17 @@
+DS-C03 SYNTHETIC TEACHING DATA LICENSE
+Version 1.1, 2026-08-13
+
+Copyright (c) 2026 《工程大数据分析技术》教材项目
+
+Permission is granted to use, copy, modify, and redistribute the DS-C03 data,
+documentation, and generation code for teaching, learning, academic review, and
+non-commercial research, provided that this notice is retained.
+
+DS-C03 is entirely synthetic. It does not describe a real project, company,
+person, inspection, or engineering acceptance result. The teaching thresholds
+and records must not be represented as official technical requirements, real
+industry statistics, or evidence for an engineering decision.
+
+THE MATERIAL IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. USERS ARE
+RESPONSIBLE FOR VERIFYING APPLICABLE CODES, STANDARDS, CONTRACT REQUIREMENTS,
+AND PROFESSIONAL JUDGMENT IN ANY REAL ENGINEERING CONTEXT.

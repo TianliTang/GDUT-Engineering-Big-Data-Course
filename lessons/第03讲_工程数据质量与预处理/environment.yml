@@ -1,0 +1,11 @@
+name: engineering-big-data
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - jupyterlab
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+
