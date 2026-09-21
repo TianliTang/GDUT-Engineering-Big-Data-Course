@@ -1,0 +1,4 @@
+scenario_id,scenario_name_zh,electricity_factor_kgco2e_kwh,diesel_factor_kgco2e_l,is_base,factor_status
+low,低因子情景,0.45,2.45,0,fictional_teaching_value
+base,基准因子情景,0.55,2.68,1,fictional_teaching_value
+high,高因子情景,0.68,2.9,0,fictional_teaching_value
