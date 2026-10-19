@@ -1,0 +1,4 @@
+scenario_id,scenario_name_zh,selection_rule,review_capacity,cost_unit,is_teaching_assumption,false_negative_cost,false_positive_cost,resource_note_zh
+balanced_review,均衡复核,validation_threshold_min_cost,,relative_unit,True,2.00,1.00,在冻结验证阈值网格上最小化2×FN+1×FP
+miss_sensitive,漏报敏感,validation_threshold_min_cost,,relative_unit,True,5.00,1.00,在冻结验证阈值网格上最小化5×FN+1×FP
+capacity_constrained,复核资源受限,top_k_by_model_score,40,relative_unit,True,,,每个分析批次按选定模型连续输出降序取前40项形成候选复核清单；不是阈值成本最优

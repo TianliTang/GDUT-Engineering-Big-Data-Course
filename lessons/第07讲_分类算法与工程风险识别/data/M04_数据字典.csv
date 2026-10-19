@@ -1,0 +1,26 @@
+table_name,field_name,field_name_zh,data_type,unit,definition,allowed_range_or_values,nullable,role,available_at_snapshot,include_in_model,generation_rule,use_limit
+work_package_delay_risk.csv,project_id,项目标识,string,none,虚拟项目的唯一标识,PRJ-0001至PRJ-0200,false,group_and_trace,true,false,按顺序生成且只用于项目分组和追溯,不得从编号推断项目规模或风险且不得进入特征矩阵
+work_package_delay_risk.csv,work_package_id,工作包标识,string,none,虚拟工作包的全局唯一标识,PRJ-xxxx-WP-01至PRJ-xxxx-WP-12,false,primary_key,true,false,由项目标识和项目内顺序构造,只用于追溯不得作为模型特征
+work_package_delay_risk.csv,snapshot_date,快照日期,date,ISO 8601 date,计划开工前14个日历日截取并用于预测的教学快照日期,2024-01-01至2025-06-30,false,time_and_trace,true,false,项目起始偏移叠加工作包偏移生成,不能解释为计划开工日或实际完成日且不处理快照后的基准变更认可延期和合同免责事件
+work_package_delay_risk.csv,discipline,专业类别,category,none,工作包所属教学专业类别,earthwork土方|structure结构|envelope围护|mep机电|interior装饰|sitework室外工程,false,feature,true,true,按冻结类别概率抽样,类别为教学编码不代表真实项目构成
+work_package_delay_risk.csv,planned_duration_d,计划工期,integer,day,分析截点前计划确定的工作包工期,8至180,false,feature,true,true,由专业类别和潜在复杂度共同生成并加入分布噪声,不代表行业工期基准
+work_package_delay_risk.csv,total_float_d,总时差,integer,day,分析截点前进度计划记录的总时差,-5至45,false,feature,true,true,由潜在复杂度和项目管理背景生成并加入噪声,负值为教学允许的计划紧张状态而非数据错误
+work_package_delay_risk.csv,predecessor_on_time_rate,前置工作包按时率,float,proportion,分析截点前已到期前置工作包的历史按时比例,0.35至0.99,true,feature,true,true,由项目管理背景和复杂度生成并注入约3%教学缺失,缺失应在训练管道内处理
+work_package_delay_risk.csv,open_design_change_count,未关闭设计变更数,integer,count,分析截点时仍处于未关闭状态的设计变更数量,0至9,false,feature,true,true,按潜在复杂度和项目管理背景生成泊松计数,不得与截点后的累计变更数混用
+work_package_delay_risk.csv,late_order_count_to_snapshot,截至截点迟交订单数,integer,count,分析截点前已经能够确认迟交的订单数量,0至7,false,feature,true,true,由供应背景和复杂度生成泊松计数,不得追加截点后才发生的迟交
+work_package_delay_risk.csv,crew_load_ratio,班组负荷比,float,ratio,计划需求工时相对于同期可承诺工时的教学比值,0.45至1.55,true,feature,true,true,由复杂度及项目管理和资源压力生成并注入约2%教学缺失,无现实行业统一阈值且缺失应在训练管道内处理
+work_package_delay_risk.csv,supplier_on_time_rate_hist,供应商历史按时率,float,proportion,分析截点前可得的虚拟供应商历史按时比例,0.35至0.99,true,feature,true,true,由项目供应背景和复杂度生成并注入约4%与早期迟交记录轻度相关的教学缺失,缺失机制不使用标签且数值不代表真实供应商
+work_package_delay_risk.csv,open_bim_clash_count,未关闭BIM碰撞数,integer,count,分析截点时尚未关闭的BIM碰撞问题数量,0至10,false,feature,true,true,按复杂度及专业类别生成泊松计数,不表示碰撞严重性或责任
+work_package_delay_risk.csv,weather_risk_score,天气风险评分,float,score,依据分析截点前已知季节和教学天气背景构造的相对评分,0.02至0.98,true,feature,true,true,由项目天气背景和季节项生成并注入约1%教学缺失,不是气象预报概率或合规阈值
+work_package_delay_risk.csv,target_delay_over_7d,延误超过7天标签,integer,binary,实际完成日相对该快照时冻结的批准基准完成日是否超过7个日历日且1为正类,0|1,false,target,false,false,由潜在线性关系非线性交互项目随机效应不可观测噪声和标签翻转共同生成,不提供实际完成日和批准基准完成日且真实应用必须按合同与基准规则重新定义
+project_split.csv,project_id,项目标识,string,none,与主表项目标识对应的分组键,PRJ-0001至PRJ-0200,false,primary_key_and_foreign_key,true,false,与主表共享同一项目主数据,只用于连接划分和分组交叉验证
+project_split.csv,split,冻结集合,category,none,项目整体所属的外部数据集合,train|validation|test,false,split_assignment,true,false,按固定种子打乱项目后分配140个训练项目30个验证项目和30个测试项目,不得把同一项目重新拆分到多个集合
+decision_cost_scenarios.csv,scenario_id,情景标识,string,none,教学选择政策的唯一标识,balanced_review|miss_sensitive|capacity_constrained,false,primary_key,true,false,由冻结配置直接写出,只用于基础阈值与Top-K规则教学
+decision_cost_scenarios.csv,scenario_name_zh,情景中文名称,string,none,教学选择政策的中文名称,均衡复核|漏报敏感|复核资源受限,false,description,true,false,由冻结配置直接写出,不表示任何真实单位的决策制度
+decision_cost_scenarios.csv,selection_rule,选择规则,string,none,模型输出转为候选复核对象的冻结规则,validation_threshold_min_cost|top_k_by_model_score,false,decision_input,true,false,由冻结配置直接写出,阈值成本最小与Top-K必须在代码中显式分支
+decision_cost_scenarios.csv,review_capacity,复核容量,integer,count,每个分析批次允许进入候选复核清单的数量,40或空,true,decision_input,true,false,仅Top-K容量情景固定为40,容量只适用于同粒度分析批次且不是现实人员配置
+decision_cost_scenarios.csv,cost_unit,代价单位,string,none,漏报与误报代价的计量口径,relative_unit,false,metadata,true,false,固定写为relative_unit,无量纲且不得货币化解释
+decision_cost_scenarios.csv,is_teaching_assumption,教学设定标记,boolean,none,说明整行代价仅为教学假设,true,false,metadata,true,false,固定写为true,不得删除或改写为真实代价
+decision_cost_scenarios.csv,false_negative_cost,漏报相对代价,float,relative_unit,每个假阴性的无量纲相对代价,2.0|5.0或空,true,decision_input,true,false,由冻结配置直接写出,Top-K情景留空且不得伪装成名单选择规则
+decision_cost_scenarios.csv,false_positive_cost,误报相对代价,float,relative_unit,每个假阳性的无量纲相对代价,1.0或空,true,decision_input,true,false,由冻结配置直接写出,Top-K情景留空且不得伪装成名单选择规则
+decision_cost_scenarios.csv,resource_note_zh,政策说明,string,none,对冻结阈值或Top-K政策的说明,非空中文文本,false,description,true,false,由冻结配置直接写出,Top-K不是阈值成本最优也不等于最终工程优先级
