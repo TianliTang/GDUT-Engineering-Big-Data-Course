@@ -13,9 +13,7 @@
 - 第08讲：决策树、集成学习与模型解释
 - 课程综合训练项目：任务说明、数据字典和学生版数据
 
-各讲资料位于 [lessons](lessons/) 文件夹，课程项目资料位于 [projects/course_project](projects/course_project/)。
-
-**第06—08讲的 Notebook 已提供，配套数据尚未上传；相关代码需要数据后才能完整运行。**
+各讲的 Notebook、数据和学习说明位于 [lessons](https://github.com/TianliTang/GDUT-Engineering-Big-Data-Course/tree/main/lessons)，课程项目资料位于 [projects/course_project](https://github.com/TianliTang/GDUT-Engineering-Big-Data-Course/tree/main/projects/course_project)。
 
 ## 下载与使用
 
